@@ -1,0 +1,7 @@
+version: "3.9"
+services:
+  nexus:
+    image: sonatype/nexus3
+    ports:
+      - "8081-8084:8081-8084"
+
