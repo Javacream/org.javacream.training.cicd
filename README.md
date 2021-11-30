@@ -9,7 +9,7 @@
     *  Branch integrata_1.12.2021
     
 * Digitales Flipchart
-  * https://docs.google.com/presentation/d/11HK2QHRi4zEvmCDrtULfZ4y0tuUz-I3XBVssNGNdxK8/edit?usp=sharing
+  * https://docs.google.com/presentation/d/19jGA6K719NoloHT45JrjLasbvOjUnFXSHfs_BSghaXk/edit?usp=sharing
 * Seminarzeiten
   * 8 Unterrichtseinheiten mit jeweils etwa 90 Minuten
   * 9:00 - 16:15
