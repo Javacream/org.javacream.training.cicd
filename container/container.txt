@@ -1,0 +1,3 @@
+nexus 8081 buildmanager
+gitlab 8090 root javacream
+jenkins 8070 javacream 

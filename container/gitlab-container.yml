@@ -3,10 +3,9 @@ services:
   web:
     image: 'gitlab/gitlab-ce:latest'
     restart: always
-    hostname: '10.160.3.93'
     ports:
       - '8090:80'
-      - '8443:443'
+      - '8091:443'
       - '822:22'
     volumes:
       - '$GITLAB_HOME/config:/etc/gitlab'
