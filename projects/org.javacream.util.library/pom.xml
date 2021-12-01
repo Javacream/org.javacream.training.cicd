@@ -55,7 +55,7 @@
 			<id>nexus</id>
 			<name>Corporate Snapshots</name>
 			<url>http://h2908727.stratoserver.net:8081/repository/maven-snapshots/</url>
-			<layout>legacy</layout>
+			<layout>default</layout>
 		</snapshotRepository>
 	</distributionManagement>
 </project>
