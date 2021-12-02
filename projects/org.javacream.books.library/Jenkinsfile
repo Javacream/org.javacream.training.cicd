@@ -29,13 +29,13 @@ pipeline {
 
         stage ('Build') {
             steps {
-                sh 'mvn -f projects/org.javacream.util.library/pom.xml package' 
+                sh 'mvn -f projects/org.javacream.books.library/pom.xml package' 
             }
         }
 
         stage("publish to nexus") {
             steps {
-            	dir("projects/org.javacream.util.library"){
+            	dir("projects/org.javacream.books.library"){
 	                script {
 	                    // Read POM xml file using 'readMavenPom' step , this step 'readMavenPom' is included in: https://plugins.jenkins.io/pipeline-utility-steps
 	                    pom = readMavenPom file: "pom.xml";
