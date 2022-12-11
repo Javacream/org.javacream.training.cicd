@@ -2,14 +2,12 @@
 
 ## Durchführung des Seminars vom 1.-2.12.2021
 
-* Referent: Rainer Sawitzki, eMail: training@rainer-sawitzki.de
-
-* Beispiele
-  * https://github.com/Javacream/org.javacream.training.cicd
-    *  Branch integrata_1.12.2021
-    
-* Digitales Flipchart
-  * https://docs.google.com/presentation/d/19jGA6K719NoloHT45JrjLasbvOjUnFXSHfs_BSghaXk/edit?usp=sharing
+* Referent: 
+  * Rainer Sawitzki
+  * eMail: training@rainer-sawitzki.de
+  * [Javacream](http://Javacream-org)
+* [Beispiele](https://github.com/Javacream/org.javacream.training.cicd)
+* [Digitales Flipchart](https://docs.google.com/presentation/d/10kved1egeiv9EdYakYzNoJ2A2yatAi8pzvHbEkdSrCI/edit?usp=sharing)
 * Seminarzeiten
   * 8 Unterrichtseinheiten mit jeweils etwa 90 Minuten
   * 9:00 - 16:15
