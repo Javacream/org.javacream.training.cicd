@@ -15,6 +15,6 @@
     * Kaffeepausen 10:30 - 10:45 und 14:30 - 14:45
     * Mittagspause 45’ 12:15-13:00
   * Dienstag
-    * 8:30 - 14:45
+    * 8:45 - 14:45
     * Kaffeepausen 10:30 - 10:45
     * Mittagspause 45’ 12:15-13:00
