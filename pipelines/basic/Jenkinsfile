@@ -1,0 +1,17 @@
+pipeline {
+    agent none
+    stages {
+        stage('Stage 1') {
+            agent {label "linux&&java"}
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Stage 2') {
+            agent {label "linux&&docker"}
+            steps {
+                sh 'ls -l'
+            }
+        }
+    }
+}

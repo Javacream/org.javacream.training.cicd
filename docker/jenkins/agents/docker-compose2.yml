@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+    agent3:
+      image: javacream/agent/java
+      privileged: true
+      user: root
+      environment:
+        JENKINS_AGENT_SSH_PUBKEY: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICsHO8RbVXe4SDDaoW/XPpvDQA/8p72DIL/2Ozj6AFcr root@4d144b2b50f3
+      ports:
+        - "4446:22"
+      container_name: jenkins_agent3
+
+    agent4:
+      image: javacream/agent/python
+      build: .
+      privileged: true
+      user: root
+      environment:
+        JENKINS_AGENT_SSH_PUBKEY: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICsHO8RbVXe4SDDaoW/XPpvDQA/8p72DIL/2Ozj6AFcr root@4d144b2b50f3
+      ports:
+        - "4447:22"
+      container_name: jenkins_agent4
+
