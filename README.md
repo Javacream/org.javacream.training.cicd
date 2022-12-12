@@ -1,7 +1,5 @@
 # org.javacream.training.cicd
 
-## Durchführung des Seminars vom 1.-2.12.2021
-
 * Referent: 
   * Rainer Sawitzki
   * eMail: training@rainer-sawitzki.de
