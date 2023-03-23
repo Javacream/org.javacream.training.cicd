@@ -4,6 +4,7 @@
   * Rainer Sawitzki
   * eMail: training@rainer-sawitzki.de
   * [Javacream](http://Javacream-org)
+
 * [Beispiele](https://github.com/Javacream/org.javacream.training.cicd)
 * [Digitales Flipchart](https://docs.google.com/presentation/d/15yBLwp9Zlm6kHF86TYEIuS0YU3pXdUttVZIEjJjgFlQ/edit?usp=sharing)
 * Seminarzeiten 
