@@ -21,7 +21,7 @@ public class ContentServiceConfiguration extends AbstractCouchbaseConfiguration{
 
 		@Override
 		public String getConnectionString() {
-			return "localhost";
+			return "javacream.eu";
 		}
 
 		@Override
