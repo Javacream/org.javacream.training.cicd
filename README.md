@@ -12,4 +12,6 @@
     * 9:00 - 16:15
     * Kaffeepausen 10:30 - 10:45 und 14:30 - 14:45
     * Mittagspause 45’ 12:15-13:00
+    * 9:00 - 9:15 "come together", Umgebung einrichten, Tag planen etc. 
+    * 15:45 - 16:15 "cool down", Fragen, Anmerkungen, offene Punkte bearbeiten...
   
