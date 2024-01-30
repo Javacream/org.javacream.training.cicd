@@ -1,0 +1,20 @@
+version: '3.6'
+services:
+  gitlab:
+    image: gitlab/gitlab-ee:<version>-ee.0
+    name: gitlab
+    restart: always
+    hostname: '10.160.1.14'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://10.160.1.14:8929'
+        gitlab_rails['gitlab_shell_ssh_port'] = 2424
+    ports:
+      - '8929:8929'
+      - '443:443'
+      - '2424:2424'
+    volumes:
+      - 'gitlab/config:/etc/gitlab'
+      - 'gitlab/logs:/var/log/gitlab'
+      - 'gitlab/data:/var/opt/gitlab'
+    shm_size: '256m'
