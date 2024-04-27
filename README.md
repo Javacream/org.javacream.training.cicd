@@ -5,7 +5,7 @@
   * eMail: rainer.sawitzki@gmail.com
   * [Javacream](http://Javacream-org)
 
-* [Digitales Flipchart](https://docs.google.com/presentation/d/1Ko2eLAZq8y1LsPXVssWhM2WZXCiV3eI1pZWmhQvLvJQ/edit?usp=sharing)
+* [Digitales Flipchart](https://docs.google.com/presentation/d/13ldVuZEklCoGWcQ6xmab47htvokLVSuJoKxRhi_ahz8/edit?usp=sharing)
 
 * Seminarzeiten 
   * 8 Unterrichtseinheiten mit jeweils etwa 90 Minuten
