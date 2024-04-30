@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+    stages {
+        stage('Check Docker') {
+            agent {docker {image 'maven'}}
+            steps {
+                sh 'mvn -v'
+            }
+        }
+        stage('Check Cloud') {
+            agent {label 'dind'}
+            steps {
+                sh 'docker -v'
+            }
+        }
+    }
+}
