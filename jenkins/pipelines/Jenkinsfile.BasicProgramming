@@ -9,14 +9,14 @@ pipeline {
                 SUFFIX = '!'
             }
             steps {
-                echo 'Hello ${NAME} ${SUFFIX}'
-                sh 'printenv'
+                echo "Hello ${NAME} ${SUFFIX}"
+                writeFile('data.txt', 'From Stage Hello')
             }
         }
         stage('Goodbye') {
             steps {
-                echo 'Goodbye ${NAME}'
-                sh 'printenv'
+                echo "Goodbye ${NAME}"
+                
             }
         }
     }
