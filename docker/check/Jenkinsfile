@@ -1,10 +1,16 @@
 pipeline {
     agent any
     stages {
-        stage('Check Docker') {
+        stage('Check Docker Maven') {
             agent {docker {image 'maven'}}
             steps {
                 sh 'mvn -v'
+            }
+        }
+        stage('Check Docker Java') {
+            agent {docker {image 'openjdk:8-alpine'}}
+            steps {
+                sh 'java -version'
             }
         }
         stage('Check Cloud') {
