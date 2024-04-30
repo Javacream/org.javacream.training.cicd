@@ -10,13 +10,13 @@ pipeline {
             }
             steps {
                 echo "Hello ${NAME} ${SUFFIX}"
-                writeFile('data.txt', 'From Stage Hello')
+                writeFile(file: 'data.txt', text: 'From Stage Hello')
             }
         }
         stage('Goodbye') {
             steps {
                 echo "Goodbye ${NAME}"
-                
+                readFile(file: 'data.txt')
             }
         }
     }
