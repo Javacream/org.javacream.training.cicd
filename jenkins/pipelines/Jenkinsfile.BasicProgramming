@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+    environment {
+        NAME = 'Sawitzki'
+    }
+    stages {
+        stage('Hello') {
+            environment {
+                SUFFIX = '!'
+            }
+            steps {
+                echo 'Hello ${NAME} ${SUFFIX}'
+                sh 'printenv'
+            }
+        }
+        stage('Goodbye') {
+            steps {
+                echo 'Goodbye ${NAME}'
+                sh 'printenv'
+            }
+        }
+    }
+}
