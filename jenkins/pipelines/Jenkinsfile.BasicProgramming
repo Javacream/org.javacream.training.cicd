@@ -10,7 +10,15 @@ pipeline {
             }
             steps {
                 echo "Hello ${NAME} ${SUFFIX}"
-                writeFile(file: 'data.txt', text: 'From Stage Hello')
+                script {
+                    def filename = 'data.txt'
+                    def chars = 'abc'
+                    def text = ''
+                    for (def i = 0; i < 5; i++){
+                        text += chars
+                    }
+                    writeFile(file: 'data.txt', text: text)
+                }
                 stash(name: 'demo', includes: 'data.txt')
                 sh 'ls'
             }
@@ -19,8 +27,11 @@ pipeline {
             steps {
                 unstash(name:'demo')
                 echo "Goodbye ${NAME}"
-                readFile(file: 'data.txt')
-                sh 'ls'
+                script{
+                    def content = readFile(file: 'data.txt')
+                    env.CONTENT = content
+                }
+                echo "Content: ${CONTENT}"
             }
         }
     }
