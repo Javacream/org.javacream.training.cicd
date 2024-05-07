@@ -1,0 +1,45 @@
+pipeline {
+    agent {docker {image 'maven'}}
+    stages {
+        stage ('Check Environment') {
+            steps {
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                '''
+            }
+        }
+
+        stage ('Build Java') {
+            steps {
+                /* in java uploading artifacts is defined in the project's pom.xml using the distributionManagement section. Artifactory credentials are provided in maven settings.xml
+                sh 'mvn -Dmaven.test.failure.ignore=true deploy' 
+            }
+            post {
+                success {
+                    junit 'target/surefire-reports/**/*.xml' 
+                }
+            }
+        }
+        stage ('Build Docker'){
+          agent {label 'dind'} /* this must be a cloud environment with docker-compose-support
+          steps {
+            sh 'docker-compose -f docker-compose-application.yml build' /* the docker-compose.yml contains the tag for the application image. Should use the version tag from pom.xml*/
+          }
+        }
+        stage ('Integration Tests'){
+          agent {label 'dind'} /* this must be a cloud environment with docker-compose-support
+           steps {
+             sh 'docker-compose -f docker-compose-application.yml up -d' /* start the newly build image */
+             sh 'docker run --rm python python integration_tests.py' /* executes integration tests written in Python */
+           }
+        }
+
+        stage ('Security Scans'){
+          agent {docker {image 'blackducksoftware/detect'}} /* or a custom image with additional tools installed */
+            steps{
+              sh 'docker run -it --rm -v [/path/to/source]:/source -v [/path/to/outputDir]:/output blackducksoftware/detect:[detect_image_tag] [detect_arguments]' /* taken from https://sig-product-docs.synopsys.com/bundle/integrations-detect/page/runningdetect/runincontainer.html */
+            }
+   
+      }
+}
