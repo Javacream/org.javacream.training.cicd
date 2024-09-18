@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
-                git url: 'https://github.com/Javacream/org.javacream.training.cicd.git', branch: 'audi_29.1.2024'
+                git url: 'https://github.com/Javacream/org.javacream.training.cicd.git', branch: '29.1.2024'
                 echo 'Done clone'
                 // Run Maven on a Unix agent.
                 dir('projects'){
