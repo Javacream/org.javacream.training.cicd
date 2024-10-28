@@ -8,12 +8,11 @@ pipeline {
             steps{
                 echo 'first'
                 script {
-                    def filename = 'data.txt'
-                    def content = 'Hello'
-                    writeFile(file: filename, text: content)
+                    def content = "Hello"
+                    writeFile(file: "data.txt", text: content)
                 }
                 sh 'ls'
-                stash (name: 'demo', includes: filename)
+                stash (name: 'demo', includes: "data.txt")
             }
         }
         stage('parallel'){
