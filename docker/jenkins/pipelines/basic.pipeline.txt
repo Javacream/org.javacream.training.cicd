@@ -1,0 +1,46 @@
+pipeline {
+    agent any
+    environment{
+        NAME = 'Sawitzki'
+    }
+    stages {
+        stage("first"){
+            steps{
+                echo 'first'
+                script {
+                    def filename = 'data.txt'
+                    def content = 'Hello'
+                    writeFile(file: filename, text: content)
+                }
+                sh 'ls'
+                stash (name: 'demo', includes: filename)
+            }
+        }
+        stage('parallel'){
+            parallel{
+                stage('Hello') {
+                    environment {
+                       HELLO_MESSAGE = "Hello"   
+                    }
+                    steps {
+                        echo "${HELLO_MESSAGE} World from ${NAME}"
+                        sh 'pwd'
+                    }
+                }
+                stage('Goodbye') {
+                    steps {
+                        echo "Goodbye World from ${NAME}"
+                    }
+                }
+                
+            }
+        }
+        stage("last"){
+            steps{
+                echo 'last'
+                unstash(name: 'demo')
+                sh 'ls'
+            }
+        }
+    }
+}
