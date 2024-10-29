@@ -13,6 +13,7 @@ pipeline {
                 }
                 sh 'ls'
                 stash (name: 'demo', includes: "data.txt")
+                sh 'docker pull javacream.eu:8082/nginx'
             }
         }
         stage('parallel'){
