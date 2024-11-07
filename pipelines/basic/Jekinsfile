@@ -1,0 +1,17 @@
+pipeline {
+    agent none
+    stages {
+        stage('Stage 1') {
+            agent {label "linux&&agent1"}
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Stage 2') {
+            agent {label "linux&&agent2"}
+            steps {
+                sh 'ls -l'
+            }
+        }
+    }
+}
