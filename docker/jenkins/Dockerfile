@@ -7,6 +7,8 @@ RUN add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/debian \
    $(lsb_release -cs) \
    stable"
-RUN apt-get update  -qq \
-    && apt-get -y install docker-ce
+#RUN apt-get update  -qq \
+#    && apt-get -y install docker-ce
+RUN curl -fsSL https://get.docker.com -o get-docker.sh
+RUN sh ./get-docker.sh
 RUN usermod -aG docker jenkins

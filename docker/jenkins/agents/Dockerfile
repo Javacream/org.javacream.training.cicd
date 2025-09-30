@@ -1,16 +1,14 @@
 FROM jenkins/ssh-agent
 USER root
-# Add Docker's official GPG key:
-RUN apt-get update
-RUN apt-get install ca-certificates curl
-RUN install -m 0755 -d /etc/apt/keyrings
-RUN curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
-RUN chmod a+r /etc/apt/keyrings/docker.asc
-
-RUN echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
-  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-  tee /etc/apt/sources.list.d/docker.list > /dev/null
-RUN apt-get update
-RUN apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+RUN apt-get update -qq \
+    && apt-get install -qqy apt-transport-https ca-certificates curl gnupg2
+#RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
+#RUN add-apt-repository \
+#   "deb [arch=amd64] https://download.docker.com/linux/debian \
+#   $(lsb_release -cs) \
+#   stable"
+#RUN apt-get update  -qq \
+#    && apt-get -y install docker-ce
+RUN curl -fsSL https://get.docker.com -o get-docker.sh
+RUN sh ./get-docker.sh
 RUN usermod -aG docker jenkins
