@@ -1,0 +1,20 @@
+FROM jenkins/ssh-agent:jdk21
+
+USER root
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+      python3 \
+      python3-pip \
+      python3-venv \
+      git \
+      curl \
+      ca-certificates && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Optional: make python command available
+RUN ln -sf /usr/bin/python3 /usr/bin/python
+
+# Keep root so the Jenkins SSH agent startup script can configure sshd
+USER root

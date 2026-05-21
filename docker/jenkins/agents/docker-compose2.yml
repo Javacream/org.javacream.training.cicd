@@ -1,25 +1,23 @@
 version: '3.8'
 services:
-    agent1:
-      image: jenkins/ssh-agent:jdk21
+    agent3:
+      image: javacream/agent/java
       privileged: true
       user: root
       environment:
         JENKINS_AGENT_SSH_PUBKEY: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICsHO8RbVXe4SDDaoW/XPpvDQA/8p72DIL/2Ozj6AFcr root@4d144b2b50f3
       ports:
-        - "4444:22"
-      container_name: jenkins_agent1
+        - "4446:22"
+      container_name: jenkins_agent3
 
-    agent2:
-      image: javacream/jenkins_ssh_agent:1.0
+    agent4:
+      image: javacream/agent/python
       build: .
       privileged: true
       user: root
       environment:
         JENKINS_AGENT_SSH_PUBKEY: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICsHO8RbVXe4SDDaoW/XPpvDQA/8p72DIL/2Ozj6AFcr root@4d144b2b50f3
       ports:
-        - "4445:22"
-      container_name: jenkins_agent2
-      volumes:
-        - /var/run/docker.sock:/var/run/docker.sock
+        - "4447:22"
+      container_name: jenkins_agent4
 
